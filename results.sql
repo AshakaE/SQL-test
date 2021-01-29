@@ -1,11 +1,17 @@
--- number 1
+-- Select basics
+-- 1
 SELECT population FROM world
 WHERE name = 'Germany';
 
--- number 2
+-- 2
 SELECT name, population FROM world
 WHERE name IN ('Sweden', 'Norway', 'Denmark');
 
--- number 3
+--  3
 SELECT name, area FROM world
 WHERE area BETWEEN 200000 and 250000;
+
+-- Select names 
+-- 1
+SELECT name FROM world
+WHERE name LIKE 'Y%';
