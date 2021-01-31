@@ -1,4 +1,4 @@
--- Select basics
+-- SELECT BASICS
 -- 1
 SELECT population FROM world
 WHERE name = 'Germany';
@@ -11,7 +11,63 @@ WHERE name IN ('Sweden', 'Norway', 'Denmark');
 SELECT name, area FROM world
 WHERE area BETWEEN 200000 and 250000;
 
--- Select names 
+-- SELECT NAMES
 -- 1
 SELECT name FROM world
 WHERE name LIKE 'Y%';
+
+-- 2
+SELECT name FROM world
+WHERE name LIKE '%y';
+
+-- 3
+SELECT name FROM world
+WHERE name LIKE '%x%';
+
+-- 4
+SELECT name FROM world
+WHERE name LIKE '%land';
+
+-- 5
+SELECT name FROM world
+WHERE name LIKE 'C%ia';
+
+-- 6
+SELECT name FROM world
+WHERE name LIKE '%oo%';
+
+-- 7
+SELECT name FROM world
+WHERE name LIKE '%a%a%a%' or name LIKE '%a%a%a%a%';
+
+-- 8
+SELECT name FROM world
+ WHERE name LIKE '_t%'
+ORDER BY name;
+
+-- 9
+SELECT name FROM world
+ WHERE name LIKE '%o__o%';
+
+--  10
+SELECT name FROM world
+ WHERE name LIKE '____';
+
+--  11
+SELECT name
+  FROM world
+ WHERE name LIKE capital;
+
+ --12
+SELECT name 
+  FROM world 
+ WHERE capital LIKE concat(name,' City');
+
+--  13
+SELECT capital, name FROM world WHERE capital LIKE concat(name, '%');
+
+-- 14
+SELECT capital, name FROM world WHERE capital LIKE concat(name,'%') AND capital <> name
+
+-- 15
+SELECT name, REPLACE(capital,name,'') FROM world WHERE capital LIKE concat(name,'%') AND capital <> name
